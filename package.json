@@ -1,6 +1,6 @@
 {
   "name": "use-effect-event",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Ponyfill of the experimental `React.useEffectEvent` hook",
   "keywords": [
     "useEffectEvent",
