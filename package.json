@@ -70,7 +70,7 @@
     "eslint-plugin-react-compiler": "0.0.0-experimental-0998c1e-20240625",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-simple-import-sort": "^12.1.1",
-    "prettier": "^3.3.3",
+    "prettier": "^3.4.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "semantic-release": "^24.1.0",
