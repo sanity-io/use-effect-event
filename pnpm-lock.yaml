@@ -60,7 +60,7 @@ importers:
         specifier: ^12.1.1
         version: 12.1.1(eslint@8.57.1)
       prettier:
-        specifier: ^3.3.3
+        specifier: ^3.4.1
         version: 3.4.1
       react:
         specifier: ^18.3.1
