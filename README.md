@@ -29,3 +29,15 @@ function Page({url}) {
   }, [url])
 }
 ```
+
+## Usage with `eslint-plugin-react-hooks`
+In order to use this hook with [`eslint-plugin-react-hooks`](npmjs.com/package/eslint-plugin-react-hooks), install `eslint-plugin-react-hooks@experimental`:
+```json
+  "devDependencies": {
+    "eslint-plugin-react-hooks": "experimental"
+  }
+```
+The experimental version of the `react-hooks` ESLint plugin checks that Effect Events are used according to the [rules]((https://react.dev/learn/separating-events-from-effects#limitations-of-effect-events)):
+1. `useEffectEvent` functions are not passed between components (`react-hooks/rules-of-hooks`)
+2. `useEffectEvent` functions are excluded from the dependency arrays of `useEffect` calls (`react-hooks/exhaustive-deps`)
+    - this corrects the behavior of the stable version, which erroneously *requires* that `useEffectEvent` functions are included as effect dependencies.
