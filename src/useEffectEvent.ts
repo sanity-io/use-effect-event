@@ -1,4 +1,4 @@
-import {useCallback, useInsertionEffect, useRef} from 'react'
+import {useInsertionEffect, useRef} from 'react'
 
 function forbiddenInRender() {
   throw new Error("A function wrapped in useEffectEvent can't be called during rendering.")

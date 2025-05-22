@@ -48,6 +48,7 @@
     "format": "prettier --cache --write .",
     "lint": "eslint --cache .",
     "prepublishOnly": "pnpm build",
+    "test": "vitest",
     "watch": "pnpm build -- --watch"
   },
   "browserslist": "extends @sanity/browserslist-config",
@@ -63,6 +64,7 @@
     "@types/react-dom": "^18.3.6",
     "@typescript-eslint/eslint-plugin": "^8.16.0",
     "@typescript-eslint/parser": "^8.16.0",
+    "@vitejs/plugin-react": "^4.4.1",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
@@ -70,11 +72,13 @@
     "eslint-plugin-react-compiler": "0.0.0-experimental-0998c1e-20240625",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-simple-import-sort": "^12.1.1",
+    "jsdom": "^26.1.0",
     "prettier": "^3.4.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "semantic-release": "^24.1.0",
-    "typescript": "5.7.2"
+    "typescript": "5.7.2",
+    "vitest": "^3.1.4"
   },
   "peerDependencies": {
     "react": "^18.3 || ^19.0.0-0"
