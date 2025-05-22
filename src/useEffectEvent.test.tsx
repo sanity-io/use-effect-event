@@ -98,15 +98,17 @@ test('useEffectEvent’s created function can be called in all use*Effect withou
       stack.push(event)
     })
 
+    // logToStack should also be omitted by the linter from all of those dependencies
+    // For now, only enabled in the experimental build of `eslint-plugin-react-hooks`
     React.useInsertionEffect(() => {
       logToStack('useInsertionEffect')
-    })
+    }, [])
     React.useLayoutEffect(() => {
       logToStack('useLayoutEffect')
-    })
+    }, [])
     React.useEffect(() => {
       logToStack('useEffect')
-    })
+    }, [])
 
     return null
   }
