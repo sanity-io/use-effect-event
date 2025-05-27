@@ -17,11 +17,5 @@
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "error"
   },
-  "plugins": [
-    "@typescript-eslint",
-    "simple-import-sort",
-    "prettier",
-    "react",
-    "react-hooks"
-  ]
+  "plugins": ["@typescript-eslint", "simple-import-sort", "prettier", "react", "react-hooks"]
 }

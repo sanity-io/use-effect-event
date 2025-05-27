@@ -65,6 +65,9 @@ importers:
       prettier:
         specifier: ^3.5.3
         version: 3.5.3
+      prettier-plugin-packagejson:
+        specifier: ^2.5.14
+        version: 2.5.14(prettier@3.5.3)
       react:
         specifier: ^19.1.0
         version: 19.1.0
@@ -80,6 +83,50 @@ importers:
       vitest:
         specifier: ^3.1.4
         version: 3.1.4(@types/node@22.15.23)(jsdom@26.1.0)(terser@5.31.1)
+
+  test/react-18:
+    dependencies:
+      react:
+        specifier: 18.3.1
+        version: 18.3.1
+      react-dom:
+        specifier: 18.3.1
+        version: 18.3.1(react@18.3.1)
+      use-effect-event:
+        specifier: workspace:*
+        version: file:(react@18.3.1)
+    devDependencies:
+      '@testing-library/dom':
+        specifier: ^10.4.0
+        version: 10.4.0
+      '@testing-library/react':
+        specifier: ^16.3.0
+        version: 16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.1.5(@types/react@19.1.6))(@types/react@19.1.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+    dependenciesMeta:
+      use-effect-event:
+        injected: true
+
+  test/react-experimental:
+    dependencies:
+      react:
+        specifier: 0.0.0-experimental-f9ae0a4c-20250527
+        version: 0.0.0-experimental-f9ae0a4c-20250527
+      react-dom:
+        specifier: 0.0.0-experimental-f9ae0a4c-20250527
+        version: 0.0.0-experimental-f9ae0a4c-20250527(react@0.0.0-experimental-f9ae0a4c-20250527)
+      use-effect-event:
+        specifier: workspace:*
+        version: file:(react@0.0.0-experimental-f9ae0a4c-20250527)
+    devDependencies:
+      '@testing-library/dom':
+        specifier: ^10.4.0
+        version: 10.4.0
+      '@testing-library/react':
+        specifier: ^16.3.0
+        version: 16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.1.5(@types/react@19.1.6))(@types/react@19.1.6)(react-dom@0.0.0-experimental-f9ae0a4c-20250527(react@0.0.0-experimental-f9ae0a4c-20250527))(react@0.0.0-experimental-f9ae0a4c-20250527)
+    dependenciesMeta:
+      use-effect-event:
+        injected: true
 
 packages:
 
@@ -556,6 +603,10 @@ packages:
 
   '@pkgr/core@0.1.1':
     resolution: {integrity: sha512-cq8o4cWH0ibXh9VGi5P20Tu9XF/0fFXl9EUinr9QfTM7a7p0oTA4iJRCQWppXR1Pg8dSM0UCItCkPwsk9qWWYA==}
+    engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
+
+  '@pkgr/core@0.2.4':
+    resolution: {integrity: sha512-ROFF39F6ZrnzSUEmQQZUar0Jt4xVoP9WnDRdWwF4NNcXs3xBTLgBUDoOwW141y1jP+S8nahIbdxbFC7IShw9Iw==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
 
   '@pnpm/config.env-replace@1.1.0':
@@ -1753,10 +1804,6 @@ packages:
     resolution: {integrity: sha512-Q6IBWr/zzw57zIkJmNhI23eRTw3nZ4BWWK034meLwOYU9L3J3IpXiyM73u2pYUwN6U7ahkerCwg2T0jlxiLwsw==}
     engines: {node: '>=14.18'}
 
-  get-stdin@9.0.0:
-    resolution: {integrity: sha512-dVKBjfWisLAicarI2Sf+JuBE/DghV4UzNAVe9yhEJuzeREd3JhOTE9cUaJTeSa77fsbQUK3pcOpJfM59+VKZaA==}
-    engines: {node: '>=12'}
-
   get-stream@6.0.1:
     resolution: {integrity: sha512-ts6Wi+2j3jQjqi70w5AlN8DFnkSwC+MqmxEzdEALB2qXZYV3X/b1CTfgPLGJNMeAWxdPfU8FO1ms3NUfaHCPYg==}
     engines: {node: '>=10'}
@@ -1780,8 +1827,8 @@ packages:
   get-tsconfig@4.10.0:
     resolution: {integrity: sha512-kGzZ3LWWQcGIAmg6iWvXn0ei6WDtV26wzHRMwDSzmAbcXrTEXxHy6IehI6/4eT6VRKyMP1eF1VqwrVUmE/LR7A==}
 
-  git-hooks-list@3.1.0:
-    resolution: {integrity: sha512-LF8VeHeR7v+wAbXqfgRlTSX/1BJR9Q1vEMR8JAz1cEg6GX07+zyj3sAdDvYjj/xnlIfVuGgj4qBei1K3hKH+PA==}
+  git-hooks-list@4.1.1:
+    resolution: {integrity: sha512-cmP497iLq54AZnv4YRAEMnEyQ1eIn4tGKbmswqwmFV4GBnAqE8NLtWxxdXa++AalfgL5EBH4IxTPyquEuGY/jA==}
 
   git-log-parser@1.2.0:
     resolution: {integrity: sha512-rnCVNfkTL8tdNryFuaY0fYiBWEBcgF748O6ZI61rslBvr2o7U65c2/6npCRqH40vuAhtgtDiqLTJjBVdrejCzA==}
@@ -2706,8 +2753,8 @@ packages:
     resolution: {integrity: sha512-GbK2cP9nraSSUF9N2XwUwqfzlAFlMNYYl+ShE/V+H8a9uNl/oUqB1w2EL54Jh0OlyRSd8RfWYJ3coVS4TROP2w==}
     engines: {node: '>=6.0.0'}
 
-  prettier-plugin-packagejson@2.5.6:
-    resolution: {integrity: sha512-TY7KiLtyt6Tlf53BEbXUWkN0+TRdHKgIMmtXtDCyHH6yWnZ50Lwq6Vb6lyjapZrhDTXooC4EtlY5iLe1sCgi5w==}
+  prettier-plugin-packagejson@2.5.14:
+    resolution: {integrity: sha512-h+3tSpr2nVpp+YOK1MDIYtYhHVXr8/0V59UUbJpIJFaqi3w4fvUokJo6eV8W+vELrUXIZzJ+DKm5G7lYzrMcKQ==}
     peerDependencies:
       prettier: '>= 1.16.0'
     peerDependenciesMeta:
@@ -2764,6 +2811,16 @@ packages:
     resolution: {integrity: sha512-y3bGgqKj3QBdxLbLkomlohkvsA8gdAiUQlSBJnBhfn+BPxg4bc62d8TcBW15wavDfgexCgccckhcZvywyQYPOw==}
     hasBin: true
 
+  react-dom@0.0.0-experimental-f9ae0a4c-20250527:
+    resolution: {integrity: sha512-eEZlECY32DCENgqAYB12jtTYkYY7XTYvb1zclyBgQ497nTJct6LububdaGuapH7Hr7/r1fi9nqRcQJvR1+QbVQ==}
+    peerDependencies:
+      react: 0.0.0-experimental-f9ae0a4c-20250527
+
+  react-dom@18.3.1:
+    resolution: {integrity: sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==}
+    peerDependencies:
+      react: ^18.3.1
+
   react-dom@19.1.0:
     resolution: {integrity: sha512-Xs1hdnE+DyKgeHJeJznQmYMIBG3TKIHJJT95Q58nHLSrElKlGQqDTR2HQ9fx5CN/Gk6Vh/kupBTDLU11/nDk/g==}
     peerDependencies:
@@ -2777,6 +2834,14 @@ packages:
 
   react-refresh@0.17.0:
     resolution: {integrity: sha512-z6F7K9bV85EfseRCp2bzrpyQ0Gkw1uLoCel9XBVWPg/TjRj94SkJzUTGfOa4bs7iJvBWtQG0Wq7wnI0syw3EBQ==}
+    engines: {node: '>=0.10.0'}
+
+  react@0.0.0-experimental-f9ae0a4c-20250527:
+    resolution: {integrity: sha512-vK2lJBFp6XttZULLc/eFHbnLNhgSIDsBVQjwxJ8eT4OYgo7NfUENRbDXf1iqXhfYluIFJLE60N5rsS0IYHD7SQ==}
+    engines: {node: '>=0.10.0'}
+
+  react@18.3.1:
+    resolution: {integrity: sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==}
     engines: {node: '>=0.10.0'}
 
   react@19.1.0:
@@ -2909,6 +2974,12 @@ packages:
     resolution: {integrity: sha512-xAg7SOnEhrm5zI3puOOKyy1OMcMlIJZYNJY7xLBwSze0UjhPLnWfj2GF2EpT0jmzaJKIWKHLsaSSajf35bcYnA==}
     engines: {node: '>=v12.22.7'}
 
+  scheduler@0.0.0-experimental-f9ae0a4c-20250527:
+    resolution: {integrity: sha512-nEpD1PGaPiF7Gdsj2xAVSTGX8z0WGRztJmTC6oMoQYMMbQ2AqU59w/H24icc8q5nnX5ZpAL75RkjpPo0VnTv5A==}
+
+  scheduler@0.23.2:
+    resolution: {integrity: sha512-UOShsPwz7NrMUqhR6t0hWjFduvOzbtv7toDH1/hIrfRNIDBnnBWd0CwJTGvTpngVlmwGCdP9/Zl/tVrDqcuYzQ==}
+
   scheduler@0.26.0:
     resolution: {integrity: sha512-NlHwttCI/l5gCPR3D1nNXtWABUmBwvZpEQiD4IXSbIDq8BzLIK/7Ir5gTFSGZDUu37K5cMNp0hFtzO38sC7gWA==}
 
@@ -2939,6 +3010,11 @@ packages:
 
   semver@7.6.2:
     resolution: {integrity: sha512-FNAIBWCx9qcRhoHcgcJ0gvU7SN1lYU2ZXuSfl04bSC5OpvDHFyJCjdNHomPXxjQlCBU67YW64PzY7/VIEH7F2w==}
+    engines: {node: '>=10'}
+    hasBin: true
+
+  semver@7.7.2:
+    resolution: {integrity: sha512-RF0Fw+rO5AMf9MAyaRXI4AV0Ulj5lMHqVxxdSgiVbixSCXoEmmX/jk0CuJw4+3SqroYO9VoUh+HcuJivvtJemA==}
     engines: {node: '>=10'}
     hasBin: true
 
@@ -3000,8 +3076,8 @@ packages:
   sort-object-keys@1.1.3:
     resolution: {integrity: sha512-855pvK+VkU7PaKYPc+Jjnmt4EzejQHyhhF33q31qG8x7maDzkeFhAAThdCYay11CISO+qAMwjOBP+fPZe0IPyg==}
 
-  sort-package-json@2.12.0:
-    resolution: {integrity: sha512-/HrPQAeeLaa+vbAH/znjuhwUluuiM/zL5XX9kop8UpDgjtyWKt43hGDk2vd/TBdDpzIyzIHVUgmYofzYrAQjew==}
+  sort-package-json@3.2.1:
+    resolution: {integrity: sha512-rTfRdb20vuoAn7LDlEtCqOkYfl2X+Qze6cLbNOzcDpbmKEhJI30tTN44d5shbKJnXsvz24QQhlCm81Bag7EOKg==}
     hasBin: true
 
   source-map-js@1.2.1:
@@ -3131,6 +3207,10 @@ packages:
 
   symbol-tree@3.2.4:
     resolution: {integrity: sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw==}
+
+  synckit@0.11.6:
+    resolution: {integrity: sha512-2pR2ubZSV64f/vqm9eLPz/KOvR9Dm+Co/5ChLgeHl0yEDRc6h5hXHoxEQH8Y5Ljycozd3p1k5TTSVdzYGkPvLw==}
+    engines: {node: ^14.18.0 || >=16.0.0}
 
   synckit@0.9.2:
     resolution: {integrity: sha512-vrozgXDQwYO72vHjUb/HnFbQx1exDjoKzqx23aXEg2a9VIg2TSFZ8FmeZpTjUCFMYw7mpX4BE2SFu8wI7asYsw==}
@@ -3326,6 +3406,11 @@ packages:
   url-join@5.0.0:
     resolution: {integrity: sha512-n2huDr9h9yzd6exQVnH/jU5mr+Pfx08LRXXZhkLLetAMESRj+anQsTAh940iMrIetKAmry9coFuZQ2jY8/p3WA==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+
+  'use-effect-event@file:':
+    resolution: {directory: '', type: directory}
+    peerDependencies:
+      react: ^18.3 || ^19.0.0-0
 
   user-home@2.0.0:
     resolution: {integrity: sha512-KMWqdlOcjCYdtIJpicDSFBQ8nFwS2i9sslAd6f4+CBGcU4gist2REnr2fxj2YocvJFxSF3ZOHLYLVZnUxv4BZQ==}
@@ -4034,6 +4119,8 @@ snapshots:
 
   '@pkgr/core@0.1.1': {}
 
+  '@pkgr/core@0.2.4': {}
+
   '@pnpm/config.env-replace@1.1.0': {}
 
   '@pnpm/network.ca-file@1.0.2':
@@ -4262,7 +4349,7 @@ snapshots:
   '@sanity/prettier-config@1.0.3(prettier@3.5.3)':
     dependencies:
       prettier: 3.5.3
-      prettier-plugin-packagejson: 2.5.6(prettier@3.5.3)
+      prettier-plugin-packagejson: 2.5.14(prettier@3.5.3)
 
   '@sanity/semantic-release-preset@5.0.0(semantic-release@24.2.5(typescript@5.8.3))':
     dependencies:
@@ -4400,6 +4487,26 @@ snapshots:
       dom-accessibility-api: 0.5.16
       lz-string: 1.5.0
       pretty-format: 27.5.1
+
+  '@testing-library/react@16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.1.5(@types/react@19.1.6))(@types/react@19.1.6)(react-dom@0.0.0-experimental-f9ae0a4c-20250527(react@0.0.0-experimental-f9ae0a4c-20250527))(react@0.0.0-experimental-f9ae0a4c-20250527)':
+    dependencies:
+      '@babel/runtime': 7.24.7
+      '@testing-library/dom': 10.4.0
+      react: 0.0.0-experimental-f9ae0a4c-20250527
+      react-dom: 0.0.0-experimental-f9ae0a4c-20250527(react@0.0.0-experimental-f9ae0a4c-20250527)
+    optionalDependencies:
+      '@types/react': 19.1.6
+      '@types/react-dom': 19.1.5(@types/react@19.1.6)
+
+  '@testing-library/react@16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.1.5(@types/react@19.1.6))(@types/react@19.1.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@babel/runtime': 7.24.7
+      '@testing-library/dom': 10.4.0
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+    optionalDependencies:
+      '@types/react': 19.1.6
+      '@types/react-dom': 19.1.5(@types/react@19.1.6)
 
   '@testing-library/react@16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.1.5(@types/react@19.1.6))(@types/react@19.1.6)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
@@ -5498,8 +5605,6 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
-  get-stdin@9.0.0: {}
-
   get-stream@6.0.1: {}
 
   get-stream@7.0.1: {}
@@ -5521,7 +5626,7 @@ snapshots:
     dependencies:
       resolve-pkg-maps: 1.0.0
 
-  git-hooks-list@3.1.0: {}
+  git-hooks-list@4.1.1: {}
 
   git-log-parser@1.2.0:
     dependencies:
@@ -6322,10 +6427,10 @@ snapshots:
     dependencies:
       fast-diff: 1.3.0
 
-  prettier-plugin-packagejson@2.5.6(prettier@3.5.3):
+  prettier-plugin-packagejson@2.5.14(prettier@3.5.3):
     dependencies:
-      sort-package-json: 2.12.0
-      synckit: 0.9.2
+      sort-package-json: 3.2.1
+      synckit: 0.11.6
     optionalDependencies:
       prettier: 3.5.3
 
@@ -6380,6 +6485,17 @@ snapshots:
       minimist: 1.2.8
       strip-json-comments: 2.0.1
 
+  react-dom@0.0.0-experimental-f9ae0a4c-20250527(react@0.0.0-experimental-f9ae0a4c-20250527):
+    dependencies:
+      react: 0.0.0-experimental-f9ae0a4c-20250527
+      scheduler: 0.0.0-experimental-f9ae0a4c-20250527
+
+  react-dom@18.3.1(react@18.3.1):
+    dependencies:
+      loose-envify: 1.4.0
+      react: 18.3.1
+      scheduler: 0.23.2
+
   react-dom@19.1.0(react@19.1.0):
     dependencies:
       react: 19.1.0
@@ -6390,6 +6506,12 @@ snapshots:
   react-is@17.0.2: {}
 
   react-refresh@0.17.0: {}
+
+  react@0.0.0-experimental-f9ae0a4c-20250527: {}
+
+  react@18.3.1:
+    dependencies:
+      loose-envify: 1.4.0
 
   react@19.1.0: {}
 
@@ -6562,6 +6684,12 @@ snapshots:
     dependencies:
       xmlchars: 2.2.0
 
+  scheduler@0.0.0-experimental-f9ae0a4c-20250527: {}
+
+  scheduler@0.23.2:
+    dependencies:
+      loose-envify: 1.4.0
+
   scheduler@0.26.0: {}
 
   semantic-release-license@1.0.3: {}
@@ -6614,6 +6742,8 @@ snapshots:
       lru-cache: 6.0.0
 
   semver@7.6.2: {}
+
+  semver@7.7.2: {}
 
   serialize-javascript@6.0.2:
     dependencies:
@@ -6674,14 +6804,13 @@ snapshots:
 
   sort-object-keys@1.1.3: {}
 
-  sort-package-json@2.12.0:
+  sort-package-json@3.2.1:
     dependencies:
       detect-indent: 7.0.1
       detect-newline: 4.0.1
-      get-stdin: 9.0.0
-      git-hooks-list: 3.1.0
+      git-hooks-list: 4.1.1
       is-plain-obj: 4.1.0
-      semver: 7.6.2
+      semver: 7.7.2
       sort-object-keys: 1.1.3
       tinyglobby: 0.2.13
 
@@ -6819,6 +6948,10 @@ snapshots:
   supports-preserve-symlinks-flag@1.0.0: {}
 
   symbol-tree@3.2.4: {}
+
+  synckit@0.11.6:
+    dependencies:
+      '@pkgr/core': 0.2.4
 
   synckit@0.9.2:
     dependencies:
@@ -7010,6 +7143,14 @@ snapshots:
       punycode: 2.3.1
 
   url-join@5.0.0: {}
+
+  use-effect-event@file:(react@0.0.0-experimental-f9ae0a4c-20250527):
+    dependencies:
+      react: 0.0.0-experimental-f9ae0a4c-20250527
+
+  use-effect-event@file:(react@18.3.1):
+    dependencies:
+      react: 18.3.1
 
   user-home@2.0.0:
     dependencies:
