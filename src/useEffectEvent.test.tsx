@@ -1,14 +1,14 @@
 import {render} from '@testing-library/react'
-import * as React from 'react'
+import {useEffect, useInsertionEffect, useLayoutEffect, useRef, useState} from 'react'
 import {flushSync} from 'react-dom'
-import {describe, expect, test} from 'vitest'
+import {describe, expect, test, vi} from 'vitest'
 
 import {useEffectEvent} from './useEffectEvent'
 
 test('useEffectEvent is always up-to-date with latest render', () => {
   const stack: Array<number> = []
   const Component = () => {
-    const [count, setCount] = React.useState(0)
+    const [count, setCount] = useState(0)
     const logCount = useEffectEvent(() => {
       stack.push(count)
     })
@@ -40,6 +40,7 @@ test('useEffectEvent is always up-to-date with latest render', () => {
 
 describe('render cycle', () => {
   test('functions created by useEffectEvent cannot be called in render', () => {
+    vi.spyOn(console, 'error').mockImplementation(() => {})
     const Component = () => {
       const onRender = useEffectEvent(() => {})
       onRender()
@@ -54,8 +55,8 @@ describe('render cycle', () => {
 
   test('functions created by useEffectEvent cannot be called in re-renders', () => {
     const Component = () => {
-      const isInitialRenderRef = React.useRef(true)
-      React.useEffect(() => {
+      const isInitialRenderRef = useRef(true)
+      useEffect(() => {
         isInitialRenderRef.current = false
       })
       const onRender = useEffectEvent(() => {})
@@ -100,13 +101,13 @@ test('useEffectEvent’s created function can be called in all use*Effect withou
 
     // logToStack should also be omitted by the linter from all of those dependencies
     // For now, only enabled in the experimental build of `eslint-plugin-react-hooks`
-    React.useInsertionEffect(() => {
+    useInsertionEffect(() => {
       logToStack('useInsertionEffect')
     }, [])
-    React.useLayoutEffect(() => {
+    useLayoutEffect(() => {
       logToStack('useLayoutEffect')
     }, [])
-    React.useEffect(() => {
+    useEffect(() => {
       logToStack('useEffect')
     }, [])
 
@@ -116,4 +117,37 @@ test('useEffectEvent’s created function can be called in all use*Effect withou
   render(<Component />)
 
   expect(stack).toEqual(['useInsertionEffect', 'useLayoutEffect', 'useEffect'])
+})
+
+test('useEffectEvent’s created function can be called in all use*Effect without throwing in strict mode', () => {
+  const stack: Array<string> = []
+  const Component = () => {
+    const logToStack = useEffectEvent((event: string) => {
+      stack.push(event)
+    })
+
+    // logToStack should also be omitted by the linter from all of those dependencies
+    // For now, only enabled in the experimental build of `eslint-plugin-react-hooks`
+    useInsertionEffect(() => {
+      logToStack('useInsertionEffect')
+    }, [])
+    useLayoutEffect(() => {
+      logToStack('useLayoutEffect')
+    }, [])
+    useEffect(() => {
+      logToStack('useEffect')
+    }, [])
+
+    return null
+  }
+
+  render(<Component />, {reactStrictMode: true})
+
+  expect(stack).toEqual([
+    'useInsertionEffect',
+    'useLayoutEffect',
+    'useEffect',
+    'useLayoutEffect',
+    'useEffect',
+  ])
 })

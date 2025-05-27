@@ -15,15 +15,13 @@
     "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/no-explicit-any": "off",
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "error",
-    "react-compiler/react-compiler": "error"
+    "react-hooks/exhaustive-deps": "error"
   },
   "plugins": [
     "@typescript-eslint",
     "simple-import-sort",
     "prettier",
     "react",
-    "react-hooks",
-    "react-compiler"
+    "react-hooks"
   ]
 }
