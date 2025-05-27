@@ -69,7 +69,7 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react": "^7.37.2",
-    "eslint-plugin-react-compiler": "0.0.0-experimental-0998c1e-20240625",
+    "eslint-plugin-react-compiler": "19.1.0-rc.2",
     "eslint-plugin-react-hooks": "0.0.0-experimental-23884812-20250520",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "jsdom": "^26.1.0",
