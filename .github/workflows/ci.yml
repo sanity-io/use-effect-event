@@ -35,7 +35,7 @@ jobs:
       - run: pnpm install
       - run: pnpm lint
       - run: pnpm test
-      - run: pnpm prepublishOnly
+      - run: pnpm prepare
 
   release:
     permissions:
