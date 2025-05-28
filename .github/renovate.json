@@ -1,5 +1,21 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>sanity-io/renovate-config", ":reviewer(team:ecosystem)"],
-  "ignorePresets": ["github>sanity-io/renovate-config:group-non-major"]
+  "extends": ["github>sanity-io/renovate-config"],
+  "ignorePresets": ["github>sanity-io/renovate-config:group-non-major", ":ignoreModulesAndTests"],
+  "packageRules": [
+    {
+      "matchPackageNames": ["eslint-plugin-react-hooks"],
+      "followTag": "experimental"
+    },
+    {
+      "matchFileNames": ["test/react-experimental/package.json"],
+      "matchPackageNames": ["react", "react-dom"],
+      "followTag": "experimental"
+    },
+    {
+      "matchFileNames": ["test/react-18/package.json"],
+      "matchPackageNames": ["react", "react-dom"],
+      "allowedVersions": "<=18"
+    }
+  ]
 }
