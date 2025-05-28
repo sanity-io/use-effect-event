@@ -1,8 +1,9 @@
 import {render} from '@testing-library/react'
 import {useEffect, useInsertionEffect, useLayoutEffect, useRef, useState} from 'react'
 import {flushSync} from 'react-dom'
-import {useEffectEvent} from 'use-effect-event'
 import {describe, expect, test, vi} from 'vitest'
+
+import {useEffectEvent} from '../../src/useEffectEvent'
 
 test('useEffectEvent is always up-to-date with latest render', () => {
   const stack: Array<number> = []

@@ -4,16 +4,10 @@
   "private": true,
   "dependencies": {
     "react": "0.0.0-experimental-f9ae0a4c-20250527",
-    "react-dom": "0.0.0-experimental-f9ae0a4c-20250527",
-    "use-effect-event": "workspace:*"
+    "react-dom": "0.0.0-experimental-f9ae0a4c-20250527"
   },
   "devDependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/react": "^16.3.0"
-  },
-  "dependenciesMeta": {
-    "use-effect-event": {
-      "injected": true
-    }
   }
 }

@@ -4,16 +4,10 @@
   "private": true,
   "dependencies": {
     "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "use-effect-event": "workspace:*"
+    "react-dom": "18.3.1"
   },
   "devDependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/react": "^16.3.0"
-  },
-  "dependenciesMeta": {
-    "use-effect-event": {
-      "injected": true
-    }
   }
 }

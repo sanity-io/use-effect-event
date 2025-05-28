@@ -92,12 +92,6 @@ importers:
       react-dom:
         specifier: 18.3.1
         version: 18.3.1(react@18.3.1)
-      use-effect-event:
-        specifier: workspace:*
-        version: file:(react@18.3.1)
-    dependenciesMeta:
-      use-effect-event:
-        injected: true
     devDependencies:
       '@testing-library/dom':
         specifier: ^10.4.0
@@ -114,12 +108,6 @@ importers:
       react-dom:
         specifier: 0.0.0-experimental-f9ae0a4c-20250527
         version: 0.0.0-experimental-f9ae0a4c-20250527(react@0.0.0-experimental-f9ae0a4c-20250527)
-      use-effect-event:
-        specifier: workspace:*
-        version: file:(react@0.0.0-experimental-f9ae0a4c-20250527)
-    dependenciesMeta:
-      use-effect-event:
-        injected: true
     devDependencies:
       '@testing-library/dom':
         specifier: ^10.4.0
@@ -3401,11 +3389,6 @@ packages:
   url-join@5.0.0:
     resolution: {integrity: sha512-n2huDr9h9yzd6exQVnH/jU5mr+Pfx08LRXXZhkLLetAMESRj+anQsTAh940iMrIetKAmry9coFuZQ2jY8/p3WA==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
-
-  'use-effect-event@file:':
-    resolution: {directory: '', type: directory}
-    peerDependencies:
-      react: ^18.3 || ^19.0.0-0
 
   user-home@2.0.0:
     resolution: {integrity: sha512-KMWqdlOcjCYdtIJpicDSFBQ8nFwS2i9sslAd6f4+CBGcU4gist2REnr2fxj2YocvJFxSF3ZOHLYLVZnUxv4BZQ==}
@@ -7136,14 +7119,6 @@ snapshots:
       punycode: 2.3.1
 
   url-join@5.0.0: {}
-
-  use-effect-event@file:(react@0.0.0-experimental-f9ae0a4c-20250527):
-    dependencies:
-      react: 0.0.0-experimental-f9ae0a4c-20250527
-
-  use-effect-event@file:(react@18.3.1):
-    dependencies:
-      react: 18.3.1
 
   user-home@2.0.0:
     dependencies:

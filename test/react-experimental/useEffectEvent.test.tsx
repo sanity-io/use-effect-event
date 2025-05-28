@@ -10,8 +10,9 @@ import {
   useState,
 } from 'react'
 import {flushSync} from 'react-dom'
-import {useEffectEvent} from 'use-effect-event'
 import {describe, expect, test, vi} from 'vitest'
+
+import {useEffectEvent} from '../../src/useEffectEvent'
 
 describe.each([
   ['native useEffectEvent', experimental_useEffectEvent],
