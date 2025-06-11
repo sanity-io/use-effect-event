@@ -53,7 +53,10 @@ describe('render cycle', () => {
     )
   })
 
-  test('functions created by useEffectEvent cannot be called in re-renders', () => {
+  /**
+   * Re-renders that throw are not currently supported in React 18, so we skip this test.
+   */
+  test.skip('functions created by useEffectEvent cannot be called in re-renders', () => {
     const Component = () => {
       const isInitialRenderRef = useRef(true)
       useEffect(() => {
