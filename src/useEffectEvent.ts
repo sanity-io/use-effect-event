@@ -6,7 +6,7 @@ function forbiddenInRender() {
   throw new Error("A function wrapped in useEffectEvent can't be called during rendering.")
 }
 
-// We can only check if we're in a render phase, beyond initial render, in React 19, whith its `React.use` hook.
+// We can only check if we're in a render phase, beyond initial render, in React 19, with its `React.use` hook.
 const isInvalidExecutionContextForEventFunction =
   'use' in React
     ? () => {
