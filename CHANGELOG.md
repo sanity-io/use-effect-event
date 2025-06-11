@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1](https://github.com/sanity-io/use-effect-event/compare/v2.0.0...v2.0.1) (2025-06-11)
+
+### Bug Fixes
+
+- false positive "can't be called during rendering" error ([#52](https://github.com/sanity-io/use-effect-event/issues/52)) ([a0f4ba0](https://github.com/sanity-io/use-effect-event/commit/a0f4ba0acd488655b3014fa171248bf41d510ddd)), closes [#44](https://github.com/sanity-io/use-effect-event/issues/44)
+
 ## [2.0.0](https://github.com/sanity-io/use-effect-event/compare/v1.0.2...v2.0.0) (2025-05-23)
 
 ### ⚠ BREAKING CHANGES
