@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.2](https://github.com/sanity-io/use-effect-event/compare/v2.0.1...v2.0.2) (2025-06-20)
+
+### Bug Fixes
+
+- **deps:** update dependency @sanity/pkg-utils to ^7.8.2 ([e98e185](https://github.com/sanity-io/use-effect-event/commit/e98e185836fab720992c44ea473b39f852ae50f9))
+
 ## [2.0.1](https://github.com/sanity-io/use-effect-event/compare/v2.0.0...v2.0.1) (2025-06-11)
 
 ### Bug Fixes
