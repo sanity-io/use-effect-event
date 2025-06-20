@@ -12,8 +12,8 @@ importers:
         specifier: ^7.2.4
         version: 7.2.4(@types/babel__core@7.20.5)(@types/node@22.15.31)(typescript@5.8.3)
       '@sanity/prettier-config':
-        specifier: ^1.0.3
-        version: 1.0.3(prettier@3.5.3)
+        specifier: ^1.0.5
+        version: 1.0.5(prettier@3.5.3)
       '@sanity/semantic-release-preset':
         specifier: ^5.0.0
         version: 5.0.0(semantic-release@24.2.5(typescript@5.8.3))
@@ -820,10 +820,10 @@ packages:
       babel-plugin-react-compiler:
         optional: true
 
-  '@sanity/prettier-config@1.0.3':
-    resolution: {integrity: sha512-daeoWaW67I2t3yIV1s3PI2o8+A7jZnucFQzaIphpFDhHYM/mqjNvEROka300TcZ1Csm4VyPBSvx1IQQ/FkqA5Q==}
+  '@sanity/prettier-config@1.0.5':
+    resolution: {integrity: sha512-8pDONAlOwwV/qRYn3oRLXvHUE7h56zBR+6pXyCfxeU198tTPT06X2Jj32QygliycElnyeGY7X8h8NJG3jP5CuA==}
     peerDependencies:
-      prettier: ^3.2.5
+      prettier: ^3.5.3
 
   '@sanity/semantic-release-preset@5.0.0':
     resolution: {integrity: sha512-2lCuU57OZW6WY7O8d4vjbpghQIc9lnxS9+dLnzrBYh8e6pA467DxlCNum4NgDeDyHxNh9HGXNalXEWJz8tec+A==}
@@ -4388,7 +4388,7 @@ snapshots:
       - debug
       - supports-color
 
-  '@sanity/prettier-config@1.0.3(prettier@3.5.3)':
+  '@sanity/prettier-config@1.0.5(prettier@3.5.3)':
     dependencies:
       prettier: 3.5.3
       prettier-plugin-packagejson: 2.5.15(prettier@3.5.3)
