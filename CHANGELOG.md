@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.3](https://github.com/sanity-io/use-effect-event/compare/v2.0.2...v2.0.3) (2025-07-16)
+
+### Bug Fixes
+
+- use in react import error ([#59](https://github.com/sanity-io/use-effect-event/issues/59)) ([cae9296](https://github.com/sanity-io/use-effect-event/commit/cae9296cd053232c21f741427a88ee0522474a0b))
+
 ## [2.0.2](https://github.com/sanity-io/use-effect-event/compare/v2.0.1...v2.0.2) (2025-06-20)
 
 ### Bug Fixes
