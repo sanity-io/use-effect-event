@@ -32,7 +32,7 @@ function Page({url}) {
 
 ## Usage with `eslint-plugin-react-hooks`
 
-In order to use this hook with [`eslint-plugin-react-hooks`](npmjs.com/package/eslint-plugin-react-hooks), install `eslint-plugin-react-hooks@experimental`:
+In order to use this hook with [`eslint-plugin-react-hooks`](https://npmjs.com/package/eslint-plugin-react-hooks), install `eslint-plugin-react-hooks@experimental`:
 
 ```json
   "devDependencies": {
