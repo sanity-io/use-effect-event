@@ -66,7 +66,7 @@ importers:
         specifier: ^3.6.2
         version: 3.6.2
       prettier-plugin-packagejson:
-        specifier: ^2.5.15
+        specifier: ^2.5.19
         version: 2.5.19(prettier@3.6.2)
       react:
         specifier: ^19.1.0
