@@ -55,7 +55,7 @@
   "browserslist": "extends @sanity/browserslist-config",
   "prettier": "@sanity/prettier-config",
   "devDependencies": {
-    "@sanity/pkg-utils": "^7.8.2",
+    "@sanity/pkg-utils": "^7.11.9",
     "@sanity/prettier-config": "^1.0.6",
     "@sanity/semantic-release-preset": "^5.0.0",
     "@testing-library/dom": "^10.4.1",
