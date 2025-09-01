@@ -84,7 +84,7 @@
   "peerDependencies": {
     "react": "^18.3 || ^19.0.0-0"
   },
-  "packageManager": "pnpm@10.14.0",
+  "packageManager": "pnpm@10.15.1",
   "publishConfig": {
     "access": "public"
   },
