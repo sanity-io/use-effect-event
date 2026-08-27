@@ -1,0 +1,47 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "options": {
+    "typeAware": true,
+    "typeCheck": true,
+    "denyWarnings": true,
+    "reportUnusedDisableDirectives": "error"
+  },
+  "ignorePatterns": ["dist"],
+  "plugins": ["react", "unicorn", "typescript", "oxc", "import", "node"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "warn",
+    "perf": "error"
+  },
+  "rules": {
+    "typescript/ban-ts-comment": "error",
+    "typescript/prefer-ts-expect-error": "error",
+    "typescript/switch-exhaustiveness-check": "error",
+    "typescript/no-deprecated": "error",
+    "typescript/no-explicit-any": "off",
+    "typescript/no-unsafe-type-assertion": "off",
+    "typescript/no-unnecessary-type-assertion": "off",
+    "react-in-jsx-scope": "off",
+    "react/rules-of-hooks": "error",
+    "react/exhaustive-deps": "error",
+    "react/jsx-key": "error",
+    "react/unsupported-syntax": "error",
+    "react/invariant": "error",
+    "react/rule-suppression": "error",
+    "react/syntax": "error",
+    "react/todo": "error",
+    "eslint/no-console": ["error", {"allow": ["warn", "error"]}]
+  },
+  "overrides": [
+    {
+      "files": ["**/*.test.tsx"],
+      "rules": {
+        "react-hooks/rules-of-hooks": "off",
+        "react/exhaustive-effect-dependencies": "off",
+        "react/refs": "off",
+        "unicorn/consistent-function-scoping": "off",
+        "eslint/no-shadow": "off"
+      }
+    }
+  ]
+}

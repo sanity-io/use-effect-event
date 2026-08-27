@@ -13,6 +13,7 @@ const isInvalidExecutionContextForEventFunction =
         // There's no way to check if we're in a render phase from outside of React, the API used by useEffectEvent is private: https://github.com/facebook/react/blob/a00ca6f6b51e46a0ccec54a2231bfe7a1ed9ae1d/packages/react-reconciler/src/ReactFiberWorkLoop.js#L1785-L1788
         // So to emulate the same behavior, we call the use hook and if it doesn't throw, we're in a render phase.
         try {
+          // oxlint-disable-next-line react-hooks/rules-of-hooks -- `use` throwing outside render is exactly the signal this probe needs
           return React.use(context)
         } catch {
           return false

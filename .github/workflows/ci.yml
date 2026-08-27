@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
     inputs:
       release:
-        description: "Publish new release"
+        description: 'Publish new release'
         required: true
         default: false
         type: boolean

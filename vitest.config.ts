@@ -6,11 +6,11 @@ export default defineConfig({
   test: {
     setupFiles: ['vitest-cleanup-after-each.ts'],
     environment: 'jsdom',
-    workspace: [
+    projects: [
       'test/*',
       {
         extends: true,
-        test: {name: 'react 19', include: ['src/**\/*.{test,spec}.?(c|m)[jt]s?(x)']},
+        test: {name: 'react 19', include: ['src/**/*.{test,spec}.?(c|m)[jt]s?(x)']},
       },
     ],
   },
