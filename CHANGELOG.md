@@ -1,9 +1,4 @@
-<!-- markdownlint-disable --><!-- textlint-disable -->
-
-# 📓 Changelog
-
-All notable changes to this project will be documented in this file. See
-[Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+# use-effect-event
 
 ## [2.0.3](https://github.com/sanity-io/use-effect-event/compare/v2.0.2...v2.0.3) (2025-07-16)
 
