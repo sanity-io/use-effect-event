@@ -1,2 +1,26 @@
 packages:
+  # The published package is the workspace root - it has to be listed for changesets
+  # (via @manypkg/get-packages) to version and publish it.
+  - '.'
   - test/*
+
+allowBuilds:
+  esbuild: false
+
+publicHoistPattern:
+  - typescript
+  - vitest
+  - '@vitejs/plugin-react'
+  - '@types/react'
+  - '@types/react-dom'
+
+peerDependencyRules:
+  allowAny:
+    - react
+    - react-dom
+
+# Experimental react builds are cut daily, so a release-age cooldown would always block them.
+minimumReleaseAgeExclude:
+  - react
+  - react-dom
+  - scheduler

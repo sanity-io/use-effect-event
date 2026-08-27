@@ -1,10 +1,9 @@
 {
   "name": "use-effect-event",
   "version": "2.0.3",
-  "description": "Ponyfill of the experimental `React.useEffectEvent` hook",
+  "description": "Ponyfill of the `React.useEffectEvent` hook, which became stable in React 19.2",
   "keywords": [
-    "useEffectEvent",
-    "useEvent",
+    "effect",
     "hooks",
     "react",
     "react18",
@@ -12,88 +11,78 @@
     "sanity",
     "sanity-io",
     "typescript",
-    "effect",
-    "use"
+    "use",
+    "useEffectEvent",
+    "useEvent"
   ],
   "bugs": {
     "url": "https://github.com/sanity-io/use-effect-event/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sanity-io/use-effect-event.git"
   },
   "license": "MIT",
   "author": "Sanity.io <hello@sanity.io>",
   "contributors": [
     "Cody Olsen <stipsan@gmail.com> (https://github.com/stipsan)"
   ],
-  "sideEffects": false,
-  "type": "module",
-  "exports": {
-    ".": {
-      "source": "./src/index.ts",
-      "require": "./dist/index.cjs",
-      "default": "./dist/index.js"
-    },
-    "./package.json": "./package.json"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sanity-io/use-effect-event.git"
   },
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "scripts": {
-    "build": "pkg build --strict --clean --check",
-    "format": "prettier --cache --write .",
-    "lint": "eslint --cache .",
-    "prepare": "pnpm build",
-    "test": "vitest",
-    "typecheck": "tsc --noEmit",
-    "watch": "pnpm build -- --watch"
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./package.json": "./package.json"
   },
-  "browserslist": "extends @sanity/browserslist-config",
-  "prettier": "@sanity/prettier-config",
+  "publishConfig": {
+    "exports": {
+      ".": {
+        "import": "./dist/index.js",
+        "require": "./dist/index.cjs"
+      },
+      "./package.json": "./package.json"
+    },
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "format": "oxfmt",
+    "lint": "oxlint",
+    "prepublishOnly": "pnpm build",
+    "release": "changeset publish",
+    "test": "vitest run",
+    "watch": "tsdown --watch"
+  },
   "devDependencies": {
-    "@sanity/pkg-utils": "^8.1.4",
-    "@sanity/prettier-config": "^1.0.6",
-    "@sanity/semantic-release-preset": "^5.0.0",
+    "@changesets/changelog-github": "^1.0.0",
+    "@changesets/cli": "^3.0.1",
+    "@sanity/tsconfig": "^2.2.1",
+    "@sanity/tsdown-config": "^0.26.2",
     "@testing-library/dom": "^10.4.1",
-    "@testing-library/react": "^16.3.0",
-    "@types/node": "^22.18.0",
-    "@types/react": "^19.1.12",
-    "@types/react-dom": "^19.1.9",
-    "@typescript-eslint/eslint-plugin": "^8.42.0",
-    "@typescript-eslint/parser": "^8.42.0",
-    "@vitejs/plugin-react": "^4.7.0",
-    "eslint": "^8.57.1",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-prettier": "^5.5.4",
-    "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "0.0.0-experimental-f9ae0a4c-20250527",
-    "eslint-plugin-simple-import-sort": "^12.1.1",
-    "jsdom": "^26.1.0",
-    "prettier": "^3.6.2",
-    "prettier-plugin-packagejson": "^2.5.19",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
-    "semantic-release": "^24.2.7",
-    "typescript": "5.9.2",
-    "vitest": "^3.2.4"
+    "@testing-library/react": "^16.3.2",
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.5",
+    "@vitejs/plugin-react": "^6.1.0",
+    "jsdom": "^30.0.1",
+    "oxc-transform-react": "^0.147.0",
+    "oxfmt": "^0.65.0",
+    "oxlint": "^1.80.0",
+    "oxlint-tsgolint": "^7.0.2001",
+    "publint": "^0.3.24",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "tsdown": "^0.22.14",
+    "typescript": "7.0.2",
+    "vitest": "^4.1.11"
   },
   "peerDependencies": {
     "react": "^18.3 || ^19.0.0-0"
   },
-  "packageManager": "pnpm@10.15.1",
-  "publishConfig": {
-    "access": "public"
-  },
-  "pnpm": {
-    "peerDependencyRules": {
-      "allowAny": [
-        "react",
-        "react-dom"
-      ]
-    }
-  }
+  "packageManager": "pnpm@11.24.0"
 }

@@ -1,5 +1,13 @@
 import {render} from '@testing-library/react'
-import {useEffect, useInsertionEffect, useLayoutEffect, useRef, useState} from 'react'
+import {
+  forwardRef,
+  memo,
+  useEffect,
+  useInsertionEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from 'react'
 import {flushSync} from 'react-dom'
 import {describe, expect, test, vi} from 'vitest'
 
@@ -79,7 +87,7 @@ describe('render cycle', () => {
   })
 })
 
-test('useEffectEvent creates functions with unstable references (they change at each render)', () => {
+test('useEffectEvent creates functions with a stable reference (the same function on every render)', () => {
   const stack: Array<() => void> = []
   const Component = () => {
     const event = useEffectEvent(() => {})
@@ -92,7 +100,67 @@ test('useEffectEvent creates functions with unstable references (they change at 
   rerender(<Component />)
 
   expect(stack).toHaveLength(2)
-  expect(stack[0]).not.toBe(stack[1])
+  expect(stack[0]).toBe(stack[1])
+})
+
+test('the returned function can be listed in effect dependency arrays without re-firing effects', () => {
+  const effectRuns: Array<number> = []
+  const Component = ({value}: {value: number}) => {
+    const event = useEffectEvent(() => value)
+    useEffect(() => {
+      effectRuns.push(value)
+      event()
+    }, [event])
+
+    return null
+  }
+
+  const {rerender} = render(<Component value={0} />)
+  rerender(<Component value={1} />)
+
+  expect(effectRuns).toEqual([0])
+})
+
+describe('freshness inside wrapper components (facebook/react#34818)', () => {
+  // React 18 has no native useEffectEvent, but the ponyfill must stay fresh inside
+  // React.memo/React.forwardRef here too — the React 19.2 native hook does not.
+  test('stays fresh when the component is wrapped in React.memo', () => {
+    const stack: Array<number> = []
+    const Child = memo(function Child({value}: {value: number}) {
+      const logValue = useEffectEvent(() => {
+        stack.push(value)
+      })
+
+      return <button onClick={() => logValue()}>log</button>
+    })
+
+    const {container, rerender} = render(<Child value={0} />)
+    rerender(<Child value={1} />)
+    container.querySelector('button')!.click()
+
+    expect(stack).toEqual([1])
+  })
+
+  test('stays fresh when the component is wrapped in React.forwardRef', () => {
+    const stack: Array<number> = []
+    const Child = forwardRef<HTMLButtonElement, {value: number}>(function Child({value}, ref) {
+      const logValue = useEffectEvent(() => {
+        stack.push(value)
+      })
+
+      return (
+        <button ref={ref} onClick={() => logValue()}>
+          log
+        </button>
+      )
+    })
+
+    const {container, rerender} = render(<Child value={0} />)
+    rerender(<Child value={1} />)
+    container.querySelector('button')!.click()
+
+    expect(stack).toEqual([1])
+  })
 })
 
 test('useEffectEvent’s created function can be called in all use*Effect without throwing', () => {

@@ -7,7 +7,7 @@ export default defineConfig({
   // workspace's react version. @vitejs/plugin-react stopped setting `dedupe` in v5.
   resolve: {dedupe: ['react', 'react-dom']},
   test: {
-    name: 'react experimental',
+    name: 'react 19.2',
     environment: 'jsdom',
     setupFiles: ['../../vitest-cleanup-after-each.ts'],
   },
