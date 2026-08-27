@@ -1,9 +1,7 @@
-/// <reference types="react/experimental" />
-
 import {render} from '@testing-library/react'
 import {
-  experimental_useEffectEvent,
   useEffect,
+  useEffectEvent as nativeUseEffectEvent,
   useInsertionEffect,
   useLayoutEffect,
   useRef,
@@ -15,7 +13,7 @@ import {describe, expect, test, vi} from 'vitest'
 import {useEffectEvent} from '../../src/useEffectEvent'
 
 describe.each([
-  ['native useEffectEvent', experimental_useEffectEvent],
+  ['native useEffectEvent', nativeUseEffectEvent],
   ['ponyfill useEffectEvent', useEffectEvent],
 ])('implementation: %s', (_, useEffectEvent) => {
   test('useEffectEvent is always up-to-date with latest render', () => {

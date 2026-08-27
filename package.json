@@ -34,57 +34,54 @@
   "sideEffects": false,
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "types": "./dist/index.d.cts",
   "exports": {
-    ".": {
-      "source": "./src/index.ts",
-      "require": "./dist/index.cjs",
-      "default": "./dist/index.js"
-    },
+    ".": "./src/index.ts",
     "./package.json": "./package.json"
   },
   "publishConfig": {
+    "exports": {
+      ".": {
+        "import": "./dist/index.js",
+        "require": "./dist/index.cjs"
+      },
+      "./package.json": "./package.json"
+    },
     "access": "public"
   },
   "scripts": {
-    "build": "pkg build --strict --clean --check",
+    "build": "tsdown",
     "format": "oxfmt",
     "lint": "oxlint",
-    "prepare": "pnpm build",
-    "test": "vitest",
-    "typecheck": "tsc --noEmit",
-    "watch": "pnpm build -- --watch"
+    "prepublishOnly": "pnpm build",
+    "test": "vitest run",
+    "watch": "tsdown --watch"
   },
   "devDependencies": {
-    "@sanity/pkg-utils": "^8.1.4",
     "@sanity/semantic-release-preset": "^5.0.0",
+    "@sanity/tsconfig": "^2.2.1",
+    "@sanity/tsdown-config": "^0.26.2",
     "@testing-library/dom": "^10.4.1",
-    "@testing-library/react": "^16.3.0",
-    "@types/node": "^22.18.0",
-    "@types/react": "^19.1.12",
-    "@types/react-dom": "^19.1.9",
-    "@vitejs/plugin-react": "^4.7.0",
-    "jsdom": "^26.1.0",
+    "@testing-library/react": "^16.3.2",
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.5",
+    "@vitejs/plugin-react": "^6.1.0",
+    "jsdom": "^30.0.1",
+    "oxc-transform-react": "^0.147.0",
     "oxfmt": "^0.65.0",
     "oxlint": "^1.80.0",
     "oxlint-tsgolint": "^7.0.2001",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
+    "publint": "^0.3.24",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
     "semantic-release": "^24.2.7",
-    "typescript": "5.9.2",
-    "vitest": "^3.2.4"
+    "tsdown": "^0.22.14",
+    "typescript": "7.0.2",
+    "vitest": "^4.1.11"
   },
   "peerDependencies": {
     "react": "^18.3 || ^19.0.0-0"
   },
-  "browserslist": "extends @sanity/browserslist-config",
-  "packageManager": "pnpm@10.15.1",
-  "pnpm": {
-    "peerDependencyRules": {
-      "allowAny": [
-        "react",
-        "react-dom"
-      ]
-    }
-  }
+  "packageManager": "pnpm@11.24.0"
 }

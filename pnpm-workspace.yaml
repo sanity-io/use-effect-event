@@ -1,2 +1,22 @@
 packages:
   - test/*
+
+allowBuilds:
+  esbuild: false
+
+publicHoistPattern:
+  - typescript
+  - vitest
+  - '@vitejs/plugin-react'
+  - '@types/react'
+  - '@types/react-dom'
+
+peerDependencyRules:
+  allowAny:
+    - react
+    - react-dom
+
+minimumReleaseAgeExclude:
+  - react-dom@0.0.0-experimental-a1124489-20260826
+  - react@0.0.0-experimental-a1124489-20260826
+  - scheduler@0.0.0-experimental-a1124489-20260826

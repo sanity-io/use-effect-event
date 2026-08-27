@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "react": "0.0.0-experimental-f9ae0a4c-20250527",
-    "react-dom": "0.0.0-experimental-f9ae0a4c-20250527"
+    "react": "0.0.0-experimental-a1124489-20260826",
+    "react-dom": "0.0.0-experimental-a1124489-20260826"
   },
   "devDependencies": {
     "@testing-library/dom": "^10.4.1",
-    "@testing-library/react": "^16.3.0"
+    "@testing-library/react": "^16.3.2"
   }
 }
