@@ -19,7 +19,8 @@ peerDependencyRules:
     - react
     - react-dom
 
+# Experimental react builds are cut daily, so a release-age cooldown would always block them.
 minimumReleaseAgeExclude:
-  - react-dom@0.0.0-experimental-a1124489-20260826
-  - react@0.0.0-experimental-a1124489-20260826
-  - scheduler@0.0.0-experimental-a1124489-20260826
+  - react
+  - react-dom
+  - scheduler
