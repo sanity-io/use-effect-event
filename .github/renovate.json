@@ -4,8 +4,9 @@
   "ignorePresets": ["github>sanity-io/renovate-config:group-non-major", ":ignoreModulesAndTests"],
   "packageRules": [
     {
-      "matchPackageNames": ["eslint-plugin-react-hooks"],
-      "followTag": "experimental"
+      "matchPackageNames": ["oxlint", "oxlint-tsgolint"],
+      "groupName": "oxlint",
+      "semanticCommitType": "chore"
     },
     {
       "matchFileNames": ["test/react-experimental/package.json"],
