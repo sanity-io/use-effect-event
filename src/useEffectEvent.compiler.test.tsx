@@ -9,17 +9,21 @@
  * variables it captured from that callback (see the `test.fails` pin at the bottom).
  */
 import {render} from '@testing-library/react'
-import {useEffect, useInsertionEffect, useLayoutEffect} from 'react'
+import {memo, useEffect, useInsertionEffect, useLayoutEffect} from 'react'
 import {beforeEach, expect, test, vi} from 'vitest'
 
 import {useEffectEvent} from './useEffectEvent'
 
 const effectStack: Array<string> = []
 const freshStack: Array<string> = []
+const identityStack: Array<() => number> = []
+const memoStack: Array<number> = []
 
 beforeEach(() => {
   effectStack.length = 0
   freshStack.length = 0
+  identityStack.length = 0
+  memoStack.length = 0
 })
 
 function EffectCaller({value}: {value: string}) {
@@ -63,6 +67,45 @@ test('effect events read the latest value on every call', () => {
   rerender(<FreshReader value="second" />)
 
   expect(freshStack).toEqual(['first', 'second'])
+})
+
+function IdentityProbe({value}: {value: number}) {
+  const event = useEffectEvent(() => value)
+
+  useEffect(() => {
+    identityStack.push(event)
+  }, [event])
+
+  return null
+}
+
+test('effects keyed on the event function fire once across re-renders (stable identity)', () => {
+  // oxlint's compiler-ported `react/exhaustive-effect-dependencies` rule only exempts the
+  // native `useEffectEvent` from dependency arrays and demands this ponyfill's functions be
+  // listed. With a stable identity that inclusion is harmless — this pins it, compiled.
+  const {rerender} = render(<IdentityProbe value={0} />)
+  rerender(<IdentityProbe value={1} />)
+
+  expect(identityStack).toHaveLength(1)
+})
+
+const MemoChild = memo(function MemoChild({value}: {value: number}) {
+  const logValue = useEffectEvent(() => {
+    memoStack.push(value)
+  })
+
+  useEffect(() => {
+    logValue()
+  }, [value])
+
+  return null
+})
+
+test('stays fresh inside React.memo when compiled (facebook/react#34818)', () => {
+  const {rerender} = render(<MemoChild value={0} />)
+  rerender(<MemoChild value={1} />)
+
+  expect(memoStack).toEqual([0, 1])
 })
 
 /**

@@ -1,4 +1,7 @@
 packages:
+  # The published package is the workspace root - it has to be listed for changesets
+  # (via @manypkg/get-packages) to version and publish it.
+  - '.'
   - test/*
 
 allowBuilds:

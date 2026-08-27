@@ -17,6 +17,11 @@
       "matchFileNames": ["test/react-18/package.json"],
       "matchPackageNames": ["react", "react-dom"],
       "allowedVersions": "<=18"
+    },
+    {
+      "matchFileNames": ["test/react-19.2/package.json"],
+      "matchPackageNames": ["react", "react-dom"],
+      "allowedVersions": "<19.3"
     }
   ]
 }

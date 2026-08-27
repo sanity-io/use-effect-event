@@ -37,6 +37,7 @@
       "files": ["**/*.test.tsx"],
       "rules": {
         "react-hooks/rules-of-hooks": "off",
+        "react-hooks/exhaustive-deps": "off",
         "react/exhaustive-effect-dependencies": "off",
         "react/refs": "off",
         "unicorn/consistent-function-scoping": "off",
