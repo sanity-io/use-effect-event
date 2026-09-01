@@ -107,18 +107,18 @@ importers:
   test/react-experimental:
     dependencies:
       react:
-        specifier: 0.0.0-experimental-a1124489-20260826
-        version: 0.0.0-experimental-a1124489-20260826
+        specifier: 0.0.0-experimental-ff7445e6-20260831
+        version: 0.0.0-experimental-ff7445e6-20260831
       react-dom:
-        specifier: 0.0.0-experimental-a1124489-20260826
-        version: 0.0.0-experimental-a1124489-20260826(react@0.0.0-experimental-a1124489-20260826)
+        specifier: 0.0.0-experimental-ff7445e6-20260831
+        version: 0.0.0-experimental-ff7445e6-20260831(react@0.0.0-experimental-ff7445e6-20260831)
     devDependencies:
       '@testing-library/dom':
         specifier: ^10.4.1
         version: 10.4.1
       '@testing-library/react':
         specifier: ^16.3.2
-        version: 16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.5(@types/react@19.2.18))(@types/react@19.2.18)(react-dom@0.0.0-experimental-a1124489-20260826(react@0.0.0-experimental-a1124489-20260826))(react@0.0.0-experimental-a1124489-20260826)
+        version: 16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.5(@types/react@19.2.18))(@types/react@19.2.18)(react-dom@0.0.0-experimental-ff7445e6-20260831(react@0.0.0-experimental-ff7445e6-20260831))(react@0.0.0-experimental-ff7445e6-20260831)
 
 packages:
 
@@ -1906,10 +1906,10 @@ packages:
   quansync@1.0.0:
     resolution: {integrity: sha512-5xZacEEufv3HSTPQuchrvV6soaiACMFnq1H8wkVioctoH3TRha9Sz66lOxRwPK/qZj7HPiSveih9yAyh98gvqA==}
 
-  react-dom@0.0.0-experimental-a1124489-20260826:
-    resolution: {integrity: sha512-nmXbJiQxkAgJXGM0iHw2vekqtNDex91E8MPJoPQ8zYJNi3wgQDygjORiWN//Paq/j5S1t2pV2WqkgyHxse0S+g==}
+  react-dom@0.0.0-experimental-ff7445e6-20260831:
+    resolution: {integrity: sha512-9Q2P44vBild0sKuoa97/Oj3hAfHuejxJVHuVnDuspf+ITT+7B35r69U8181pFzsw/Xq36X4JzoGTZC3YBmRxDw==}
     peerDependencies:
-      react: 0.0.0-experimental-a1124489-20260826
+      react: 0.0.0-experimental-ff7445e6-20260831
 
   react-dom@18.3.1:
     resolution: {integrity: sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==}
@@ -1924,8 +1924,8 @@ packages:
   react-is@17.0.2:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==}
 
-  react@0.0.0-experimental-a1124489-20260826:
-    resolution: {integrity: sha512-Qx6sL37TKDIlEvA4AtBWPN3f97J+FWKWd2lkhXjtsnEUnmKwWjggDNDRQgoXP29u9kwD6mOqRqSuD4551zgZNA==}
+  react@0.0.0-experimental-ff7445e6-20260831:
+    resolution: {integrity: sha512-u6afi60NhfuAEJktT/GrDCiroyOpbXo3cIV6tNwhqg9nKOEPUFhec7lJ3lTIDsTYA6pmAwqPh0z7cseObz0Aag==}
     engines: {node: '>=0.10.0'}
 
   react@18.3.1:
@@ -1980,8 +1980,8 @@ packages:
     resolution: {integrity: sha512-xAg7SOnEhrm5zI3puOOKyy1OMcMlIJZYNJY7xLBwSze0UjhPLnWfj2GF2EpT0jmzaJKIWKHLsaSSajf35bcYnA==}
     engines: {node: '>=v12.22.7'}
 
-  scheduler@0.0.0-experimental-a1124489-20260826:
-    resolution: {integrity: sha512-OGl+3RciIc5RFC+hMaWUb3w8L1tguaxRcRN8VKd331jtPLoKNjlbYx3MeSjtMQpK+yTKOaDVNkyHV1wBb6KW0A==}
+  scheduler@0.0.0-experimental-ff7445e6-20260831:
+    resolution: {integrity: sha512-SdLHzdZDwTyLTm8CMu5jouf3RSQzzoo+VEuzajr5rG7YO7Ntm8YQDzw/CRvZuUdEV9O3MD4MVjAxwW/18gC+cw==}
 
   scheduler@0.23.2:
     resolution: {integrity: sha512-UOShsPwz7NrMUqhR6t0hWjFduvOzbtv7toDH1/hIrfRNIDBnnBWd0CwJTGvTpngVlmwGCdP9/Zl/tVrDqcuYzQ==}
@@ -3007,12 +3007,12 @@ snapshots:
       picocolors: 1.1.1
       pretty-format: 27.5.1
 
-  '@testing-library/react@16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.5(@types/react@19.2.18))(@types/react@19.2.18)(react-dom@0.0.0-experimental-a1124489-20260826(react@0.0.0-experimental-a1124489-20260826))(react@0.0.0-experimental-a1124489-20260826)':
+  '@testing-library/react@16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.5(@types/react@19.2.18))(@types/react@19.2.18)(react-dom@0.0.0-experimental-ff7445e6-20260831(react@0.0.0-experimental-ff7445e6-20260831))(react@0.0.0-experimental-ff7445e6-20260831)':
     dependencies:
       '@babel/runtime': 7.29.7
       '@testing-library/dom': 10.4.1
-      react: 0.0.0-experimental-a1124489-20260826
-      react-dom: 0.0.0-experimental-a1124489-20260826(react@0.0.0-experimental-a1124489-20260826)
+      react: 0.0.0-experimental-ff7445e6-20260831
+      react-dom: 0.0.0-experimental-ff7445e6-20260831(react@0.0.0-experimental-ff7445e6-20260831)
     optionalDependencies:
       '@types/react': 19.2.18
       '@types/react-dom': 19.2.5(@types/react@19.2.18)
@@ -3753,10 +3753,10 @@ snapshots:
 
   quansync@1.0.0: {}
 
-  react-dom@0.0.0-experimental-a1124489-20260826(react@0.0.0-experimental-a1124489-20260826):
+  react-dom@0.0.0-experimental-ff7445e6-20260831(react@0.0.0-experimental-ff7445e6-20260831):
     dependencies:
-      react: 0.0.0-experimental-a1124489-20260826
-      scheduler: 0.0.0-experimental-a1124489-20260826
+      react: 0.0.0-experimental-ff7445e6-20260831
+      scheduler: 0.0.0-experimental-ff7445e6-20260831
 
   react-dom@18.3.1(react@18.3.1):
     dependencies:
@@ -3771,7 +3771,7 @@ snapshots:
 
   react-is@17.0.2: {}
 
-  react@0.0.0-experimental-a1124489-20260826: {}
+  react@0.0.0-experimental-ff7445e6-20260831: {}
 
   react@18.3.1:
     dependencies:
@@ -3833,7 +3833,7 @@ snapshots:
     dependencies:
       xmlchars: 2.2.0
 
-  scheduler@0.0.0-experimental-a1124489-20260826: {}
+  scheduler@0.0.0-experimental-ff7445e6-20260831: {}
 
   scheduler@0.23.2:
     dependencies:
