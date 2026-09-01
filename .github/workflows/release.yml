@@ -44,7 +44,8 @@ jobs:
           check-latest: true
           node-version: lts/*
       - name: Update npm to use trusted publishing (OIDC)
-        run: npm install -g npm@latest
+        # npm 12 + changesets#2274: changeset publish crashes on npm 12's array-wrapped `pnpm info --json`
+        run: npm install -g npm@11
       - run: pnpm install
       - name: Create Release Pull Request or Publish to npm
         uses: changesets/action@8488615a623b1b9c987934bb89eae8af6a946ac1 # v2.1.1
